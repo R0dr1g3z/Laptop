@@ -55,20 +55,27 @@ class PinLogin{
         this.el.textDisplay.classList.remove("pin-login__text--error");
     }
     _attemptLogin(){
-        if(this.value.length > 0){
-            fetch(this.loginEndpoint,{
-                method: "post",
-                headers: {
-                    "Content-type": "application/x-www-form-urlencoded"
-                },
-                body: `pincode=${this.value}`
-            }).then(resposne => {
-                if (resposne.status === 200){
-                    window.location.href = this.redirectTo;
-                } else {
-                    this.el.textDisplay.classList.add("pin-login__text--error");
-                }
-            })
-        }
+            if(this.value === "1234"){
+                window.location.href = this.redirectTo;
+            } else {
+                this.el.textDisplay.classList.add("pin-login__text--error");
+            }
     }
+    // _attemptLogin(){
+    //     if(this.value.length > 0){
+    //         fetch(this.loginEndpoint,{
+    //             method: "post",
+    //             headers: {
+    //                 "Content-Type": "application/x-www-form-urlencoded"
+    //             },
+    //             body: `pincode=${this.value}`
+    //         }).then(resposne => {
+    //             if (resposne.status === 200){
+    //                 window.location.href = this.redirectTo;
+    //             } else {
+    //                 this.el.textDisplay.classList.add("pin-login__text--error");
+    //             }
+    //         })
+    //     }
+    // }
 }
