@@ -52,7 +52,7 @@ class PinLogin{
     }
     _updateValueText(){
         this.el.textDisplay.value = "_".repeat(this.value.length);
-        this.el.textDisplay.classList.remove("pin-login__text-error");
+        this.el.textDisplay.classList.remove("pin-login__text--error");
     }
     _attemptLogin(){
         if(this.value.length > 0){
